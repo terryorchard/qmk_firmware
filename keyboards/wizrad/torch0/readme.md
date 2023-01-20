@@ -1,6 +1,6 @@
 # wizrad/torch0
 
-![wizrad/torch0](imgur.com image replace me!)
+![wizrad/torch0](https://imgur.com/a/eWaquxL)
 
 [Build files and details](https://github.com/terryorchard/keyb/tree/main/torch0)
 
