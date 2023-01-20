@@ -2,6 +2,8 @@
 
 ![wizrad/torch0](imgur.com image replace me!)
 
+[Build files and details](https://github.com/terryorchard/keyb/tree/main/torch0)
+
 *A short description of the keyboard/project*
 
 * Keyboard Maintainer: [Terry Orchard](https://github.com/terryorchard)
