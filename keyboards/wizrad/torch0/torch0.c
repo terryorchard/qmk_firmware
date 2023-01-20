@@ -14,9 +14,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "quantum.h"
 
-// Not yet available in `info.json`
-#ifdef OLED_ENABLE
-#   define OLED_FONT_H "keyboards/splitkb/aurora/corne/glcdfont.c"
+// The first four layers gets a name for readability, which is then used in the OLED below.
+enum layers {
+  _DEFAULT,
+  _LOWER,
+  _RAISE,
+  _ADJUST,
+  _NUMPAD,
+  _MIRYOKU,
+  _SYMBOL
+};
+
+#ifdef ENCODER_ENABLE
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+    if (!encoder_update_user(index, clockwise)) {
+        return false;
+    }
+    if(IS_LAYER_ON(_LOWER) || IS_LAYER_ON(_RAISE) || IS_LAYER_ON(_SYMBOL)) {
+        if (clockwise){
+            tap_code(KC_VOLU);
+        } else{
+            tap_code(KC_VOLD);
+        }        
+    } else {
+        if (clockwise){
+        tap_code(KC_WH_D);
+        } else{
+        tap_code(KC_WH_U);
+        }
+    }
+    return true;
+}
 #endif

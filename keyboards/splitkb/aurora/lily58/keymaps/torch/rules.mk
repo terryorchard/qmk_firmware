@@ -13,5 +13,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-DEFAULT_FOLDER = splitkb/aurora/lily58/rev1
+# NOTE: These are already enabled by default at the revision level
 CONVERT_TO=elite_pi
+ENCODER_ENABLE = yes
+OLED_ENABLE = yes
+RGB_MATRIX_ENABLE = yes
+RGBLIGHT_ENABLE = no
+DYNAMIC_MACRO_ENABLE = yes
+DYNAMIC_TAPPING_TERM_ENABLE = yes
