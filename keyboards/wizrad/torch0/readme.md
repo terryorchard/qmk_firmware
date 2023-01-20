@@ -1,14 +1,14 @@
 # wizrad/torch0
 
-![wizrad/torch0](https://raw.githubusercontent.com/terryorchard/keyb/main/torch0/images/FinishedBuild.jpeg)
+![wizrad/torch0](https://raw.githubusercontent.com/terryorchard/keyb/main/torch0/images/NewEncoder.jpg)
 
 [Build files and details](https://github.com/terryorchard/keyb/tree/main/torch0)
 
-*A short description of the keyboard/project*
+*Alice-inspired, column-staggered, 40%, ergonomic hand-wired keyboard with one encoder.*
 
 * Keyboard Maintainer: [Terry Orchard](https://github.com/terryorchard)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Hardware Supported: *Firmware was written for and only tested with Elite-Pi*
+* Hardware Availability: *Completely custom build; see link above for details*
 
 Make example for this keyboard (after setting up your build environment):
 
