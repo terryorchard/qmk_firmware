@@ -1,0 +1,42 @@
+{
+    "keyboard": "splitkb/aurora/corne/rev1",
+    "keymap": "default",
+    "version": 1,
+    "layout": "LAYOUT",
+    "layers": [
+        [
+            "KC_NUM",       "KC_PSLS",      "KC_PAST",    "KC_PMNS",
+            "KC_P7",        "KC_P8",        "KC_P9",      "KC_PPLS",
+            "KC_P4",        "KC_P5",        "KC_P6",      "TO(1)",
+            "KC_P1",        "KC_P2",        "KC_P3",      "KC_NO",
+            "KC_P0",        "KC_PDOT",      "KC_PENT"
+        ],
+        [
+            "KC_NUM",       "KC_PSLS",      "KC_PAST",      "KC_PMNS",
+            "KC_P7",        "KC_UP",        "KC_P9",        "KC_PPLS",
+            "KC_LEFT",      "KC_P5",        "KC_RGHT",      "TO(2)",
+            "KC_P1",        "KC_DOWN",      "KC_P3",        "TO(0)",
+            "KC_P0",        "KC_PDOT",      "KC_PENT"
+        ],
+        [
+            "KC_NUM",       "KC_PSLS",      "KC_PAST",      "KC_PMNS",
+            "KC_Q",         "KC_W",         "KC_E",        "KC_PPLS",
+            "KC_A",         "KC_S",         "KC_D",        "KC_NO",
+            "KC_Z",         "KC_X",         "KC_C",        "TO(1)",
+            "KC_LCTL",      "KC_PDOT",      "KC_PENT"
+        ]
+    ],
+    "config": {
+        "features": {
+            "oled": false,
+            "rgb_matrix": true,
+            "rgblight": false
+        },
+        "rgblight": {
+            "hue_steps": 8,
+            "saturation_steps": 8,
+            "brightness_steps": 8,
+            "sleep": true
+        }
+    }
+}

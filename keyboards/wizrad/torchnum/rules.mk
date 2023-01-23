@@ -1,1 +1,3 @@
-# This file intentionally left blank
+DYNAMIC_MACRO_ENABLE = yes
+DYNAMIC_TAPPING_TERM_ENABLE = yes
+RGB_MATRIX_ENABLE = yes

@@ -3,6 +3,12 @@
 
 #pragma once
 
+#ifdef RGB_MATRIX_ENABLE
+#    define NOP_FUDGE 0.4
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
+#    define RGB_MATRIX_LED_COUNT 1
+#endif
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
