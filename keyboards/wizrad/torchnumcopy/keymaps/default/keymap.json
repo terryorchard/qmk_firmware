@@ -1,5 +1,5 @@
 {
-    "keyboard": "wizrad/torchnum",
+    "keyboard": "splitkb/aurora/corne/rev1",
     "keymap": "default",
     "version": 1,
     "layout": "LAYOUT",
@@ -9,14 +9,14 @@
             "KC_P7",        "KC_P8",        "KC_P9",      "KC_PPLS",
             "KC_P4",        "KC_P5",        "KC_P6",      "KC_VOLU",
             "KC_P1",        "KC_P2",        "KC_P3",      "KC_VOLD",
-            "LT(1, KC_P0)", "KC_PDOT",      "LALT_T(KC_PENT)"
+            "KC_P0",        "KC_PDOT",      "LT(1, KC_PENT)"
         ],
         [
             "KC_NUM",       "KC_PSLS",      "KC_PAST",    "KC_PMNS",
             "KC_P7",        "KC_P8",        "KC_P9",      "KC_PPLS",
             "TO(4)",        "TO(5)",        "TO(6)",      "KC_VOLU",
             "TO(1)",        "TO(2)",        "TO(3)",      "KC_VOLD",
-            "_______",      "KC_PDOT",      "QK_BOOT"
+            "TO(0)",        "KC_PDOT",      "_______"
         ],
         [
             "KC_NUM",       "KC_PSLS",      "KC_PAST",      "KC_PMNS",
@@ -53,17 +53,5 @@
             "KC_P1",        "KC_P2",        "KC_P3",        "KC_VOLD",
             "KC_P0",        "KC_PDOT",      "TO(0)"
         ]
-    ],
-    "config": {
-        "features": {
-            "rgb_matrix": false,
-            "rgblight": true
-        },
-        "rgblight": {
-            "hue_steps": 8,
-            "saturation_steps": 8,
-            "brightness_steps": 8,
-            "sleep": true
-        }
-    }
+    ]
 }
