@@ -66,6 +66,8 @@
 // #define ENABLE_RGB_MATRIX_SOLID_SPLASH              // Hue & value pulse away from a single key hit then fades value out
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH         // Hue & value pulse away from multiple key hits then fades value out
 
+#define ENABLE_RGB_MATRIX_TYPING_HEATMAP
+
 #define RGB_MATRIX_KEYPRESSES                       // reacts to keypresses
 #define RGB_DISABLE_AFTER_TIMEOUT 0                 // number of ticks to wait until disabling effects
 #define RGB_DISABLE_WHEN_USB_SUSPENDED false        // turn off effects when suspended
