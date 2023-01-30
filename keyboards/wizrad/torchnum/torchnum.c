@@ -32,23 +32,54 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
         return false;
     }
-    if(IS_LAYER_ON(_ARROW) || IS_LAYER_ON(_RGB) || IS_LAYER_ON(_NUMS)) {
+    if(IS_LAYER_ON(_ARROW) || IS_LAYER_ON(_MOUSE) || IS_LAYER_ON(_ALPHA)) {
         if (clockwise){
-        tap_code(KC_WH_U);
-        } else{
         tap_code(KC_WH_D);
+        } else{
+        tap_code(KC_WH_U);
         }
     } else {
         if (clockwise){
-            tap_code(KC_VOLD);
-        } else{
             tap_code(KC_VOLU);
+        } else{
+            tap_code(KC_VOLD);
         }
     }
     return true;
 };
 
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (biton32(state)) {
+        case _BASE:
+            rgblight_sethsv_noeeprom_purple();
+            break;
+        case _NAV:
+            rgblight_sethsv_noeeprom_red();
+            break;
+        case _ALPHA:
+            rgblight_sethsv_noeeprom_orange();
+            break;
+        case _ARROW:
+            rgblight_sethsv_noeeprom_green();
+            break;
+        case _MOUSE:
+            rgblight_sethsv_noeeprom_blue();
+            break;
+        case _NUMS:
+            rgblight_sethsv_noeeprom_magenta();
+            break;
+        case _RGB:
+            rgblight_sethsv_noeeprom_teal();
+            break;
+        default:
+            rgblight_sethsv_noeeprom_white();
+            break;
+    }
+    return state;
+};
+
+/*
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (biton32(state)) {
         case _BASE:
@@ -78,3 +109,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 };
+*/

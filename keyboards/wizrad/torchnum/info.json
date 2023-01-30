@@ -53,8 +53,8 @@
         "enabled": true,
         "rotary": [
             {
-                "pin_a": "GP5",
-                "pin_b": "GP4"
+                "pin_a": "GP0",
+                "pin_b": "GP1"
             }
         ]
     }

@@ -7,4 +7,4 @@
 #define RGBLED_NUM 1
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
-#define RGB_DI_PIN GP0
+#define RGB_DI_PIN GP2

@@ -22,7 +22,9 @@ enum layers {
   _LOWER,
   _RAISE,
   _ADJUST,
-  _NUMPAD
+  _NUMPAD,
+  _MIRYOKU,
+  _SYMBOL
 };
 
 #ifdef OLED_ENABLE
@@ -228,6 +230,12 @@ static void render_layer_state(void) {
     } else if(layer_state_is(_NUMPAD)) {
         oled_write_P(adjust_layer, false);
         oled_write_P(PSTR("NUMPD"), false);
+    } else if(layer_state_is(_MIRYOKU)) {
+        oled_write_P(adjust_layer, false);
+        oled_write_P(PSTR("MIRYO"), false);
+    } else if(layer_state_is(_SYMBOL)) {
+        oled_write_P(adjust_layer, false);
+        oled_write_P(PSTR("SYMBL"), false);
     } else {
         oled_write_P(adjust_layer, false);
         oled_write_P(PSTR("UNKWN"), false);
