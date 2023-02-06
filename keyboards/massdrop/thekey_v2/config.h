@@ -29,10 +29,13 @@
 #define MATRIX_COL_PINS { D2, D1, D0 }
 
 #define DIODE_DIRECTION ROW2COL
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 
 #define RGB_DI_PIN B1
 #define RGBLED_NUM 5
 #define RGBLIGHT_LED_MAP {4, 0, 1, 2, 3}
+
+#define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH         // Hue & value pulse away from multiple key hits then fades value out
 #define RGBLIGHT_EFFECT_BREATHING
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
@@ -43,7 +46,7 @@
 #define RGBLIGHT_EFFECT_RGB_TEST
 #define RGBLIGHT_EFFECT_ALTERNATING
 #define RGBLIGHT_EFFECT_TWINKLE
-#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_HUE_STEP 20
 #define RGBLIGHT_SAT_STEP 10
 #define RGBLIGHT_VAL_STEP 15
 #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
