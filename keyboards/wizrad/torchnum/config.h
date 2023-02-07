@@ -18,6 +18,6 @@
 #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
 
 #define RGBLIGHT_SLEEP /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-#define RGBLIGHT_LAYERS /* Enable lighting layers */
-#define RGBLIGHT_LAYER_BLINK /* Enable lighting layer blink */
-#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+//#define RGBLIGHT_LAYERS /* Enable lighting layers */
+//#define RGBLIGHT_LAYER_BLINK /* Enable lighting layer blink */
+//#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
