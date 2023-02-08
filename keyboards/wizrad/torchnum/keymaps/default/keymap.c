@@ -47,79 +47,58 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
+led_config_t g_led_config = { {
+        // Key Matrix to LED Index,
+        { 0,      NO_LED, NO_LED, NO_LED },
+        { NO_LED, NO_LED, NO_LED, NO_LED },
+        { NO_LED, NO_LED, NO_LED, NO_LED },
+        { NO_LED, NO_LED, NO_LED, NO_LED },
+        { NO_LED, NO_LED, NO_LED, NO_LED }
+    }, {
+        // LED Index to Physical Position
+        { 44,  44 }
+    }, {
+        // LED Index to Flag
+        1
+    }
+};
+
+void matrix_init_user(void) {
+    rgb_matrix_set_color_all(RGB_PURPLE);
+}
+
+bool rgb_matrix_indicators_user(void) {
+    if (!rgb_matrix_indicators_user()) {
+        return false;
+    }
+    uint8_t layer = biton32(layer_state);
+    switch (layer) {
+        case 0:
+            rgb_matrix_set_color_all(RGB_PURPLE);
+            break;
+        case 1:
+            rgb_matrix_set_color_all(RGB_RED);
+            break;
+        case 2:
+            rgb_matrix_set_color_all(RGB_GREEN);
+            break;
+        default:
+            rgb_matrix_set_color_all(RGB_WHITE);
+            break;
+    }
+    return true;
+}
+
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
         return false;
     }
     if (clockwise){
-        tap_code(KC_VOLU);
+        tap_code16(C(KC_TAB));
     } else{
-        tap_code(KC_VOLD);
+        tap_code16(S(C(KC_TAB)));
     }
     return true;
-}
-
-
-void matrix_init_user(void) {
-    rgblight_enable();
-    rgb_matrix_set_color(0, RGB_WHITE);
-}
-
-/*
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (biton32(state)) {
-        case 0:
-            rgblight_set0, RGB_at(102,0,204, 0);
-            break;
-        case 1:
-            rgblight_set0, RGB_at(204,0,0, 0);
-            break;
-        case 2:
-            rgblight_set0, RGB_at(0,204,0, 0);
-            break;
-        default:
-            rgblight_set0, RGB_at(255,255,255, 0);
-            break;
-    }
-  return state;
-}
-
-                switch (layer) {
-                    case 0:
-                        rgb_matrix_set_color_all(RGB_PURPLE);
-                        SEND_STRING("purple");
-                        break;
-                    case 1:
-                        rgb_matrix_set_color_all(RGB_RED);
-                        SEND_STRING("red");
-                        break;
-                    case 2:
-                        rgb_matrix_set_color_all(RGB_GREEN);
-                        SEND_STRING("green");
-                        break;
-                    default:
-                        rgb_matrix_set_color_all(RGB_BLUE);
-                        SEND_STRING("white");
-                }
-            }
-*/
-
-void rgb_matrix_indicators_user(void) {
-    uint8_t layer = biton32(layer_state);
-    switch (layer) {
-        case 0:
-            rgb_matrix_set_color(0, RGB_PURPLE);
-            break;
-        case 1:
-            rgb_matrix_set_color(0, RGB_RED);
-            break;
-        case 2:
-            rgb_matrix_set_color(0, RGB_GREEN);
-            break;
-        default:
-            rgb_matrix_set_color(0, RGB_BLUE);
-            break;
-    }
 }
 
 uint16_t layer = 0;
