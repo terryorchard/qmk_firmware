@@ -7,6 +7,7 @@ enum layers {
     _ARROW,
     _RGB
 };
+
 enum custom_keycodes {
     LAYER_SWITCH = SAFE_RANGE,
     OPTO,
@@ -63,14 +64,18 @@ led_config_t g_led_config = { {
     }
 };
 
+
 void matrix_init_user(void) {
     rgb_matrix_set_color_all(RGB_PURPLE);
 }
 
+
 bool rgb_matrix_indicators_user(void) {
+/*
     if (!rgb_matrix_indicators_user()) {
         return false;
     }
+*/
     uint8_t layer = biton32(layer_state);
     switch (layer) {
         case 0:
