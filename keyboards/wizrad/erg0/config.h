@@ -15,7 +15,3 @@
  */
 
 #pragma once
-
-#ifdef RGBLIGHT_ENABLE
-#   define RGBLIGHT_EFFECT_BREATHING
-#endif

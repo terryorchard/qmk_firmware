@@ -1,0 +1,31 @@
+{
+    "keyboard": "splitkb/aurora/corne/rev1",
+    "keymap": "default",
+    "version": 1,
+    "layout": "LAYOUT",
+    "layers": [
+        [
+          "KC_Q"      , "KC_W"      , "KC_E"      , "KC_R"      , "KC_T"      ,         "KC_Y"      , "KC_U"      , "KC_I"      , "KC_O"      , "KC_P"      ,
+          "LGUI(KC_A)", "LALl(KC_S)", "LCTL(KC_D)", "LSFT(KC_F)", "KC_G"      ,         "KC_H"      , "RSFT(KC_J)", "RCTL(KC_K)", "RALT(KC_L)", "RGUI(KC_QUOT)",
+          "LT(2,KC_Z)", "KC_X"      , "KC_C"      , "KC_V"      , "KC_B"      ,         "KC_N"      , "KC_M"      , "KC_COMM"   , "KC_DOT"    , "KC_SLSH"   ,
+                        "KC_TAB"    , "KC_DEL"    , "LT(1,KC_BSPC)","KC_F5"   ,         "KC_MPLY"   , "KC_SPC"    , "KC_ENT"    , "KC_ESC"
+        ],
+        [
+            "KC_Q"      , "KC_W"      , "KC_E"      , "KC_R"      , "KC_T"      ,         "KC_Y"      , "KC_U"      , "KC_I"      , "KC_O"      , "KC_P"      ,
+            "LGUI(KC_A)", "LALl(KC_S)", "LCTL(KC_D)", "LSFT(KC_F)", "KC_G"      ,         "KC_H"      , "RSFT(KC_J)", "RCTL(KC_K)", "RALT(KC_L)", "RGUI(KC_QUOT)",
+            "LT(2,KC_Z)", "KC_X"      , "KC_C"      , "KC_V"      , "KC_B"      ,         "KC_N"      , "KC_M"      , "KC_COMM"   , "KC_DOT"    , "KC_SLSH"   ,
+                          "KC_TAB"    , "KC_DEL"    , "LT(1,KC_BSPC)","KC_F5"   ,         "KC_MPLY"   , "KC_SPC"    , "KC_ENT"    , "KC_ESC"
+        ],
+        [
+            "KC_Q"      , "KC_W"      , "KC_E"      , "KC_R"      , "KC_T"      ,         "KC_Y"      , "KC_U"      , "KC_I"      , "KC_O"      , "KC_P"      ,
+            "LGUI(KC_A)", "LALl(KC_S)", "LCTL(KC_D)", "LSFT(KC_F)", "KC_G"      ,         "KC_H"      , "RSFT(KC_J)", "RCTL(KC_K)", "RALT(KC_L)", "RGUI(KC_QUOT)",
+            "LT(2,KC_Z)", "KC_X"      , "KC_C"      , "KC_V"      , "KC_B"      ,         "KC_N"      , "KC_M"      , "KC_COMM"   , "KC_DOT"    , "KC_SLSH"   ,
+                          "KC_TAB"    , "KC_DEL"    , "LT(1,KC_BSPC)","KC_F5"   ,         "KC_MPLY"   , "KC_SPC"    , "KC_ENT"    , "KC_ESC"
+        ]
+    ],
+    "config": {
+        "encoder": {
+            "enabled": true
+        }
+    }
+}

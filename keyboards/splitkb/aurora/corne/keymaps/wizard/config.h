@@ -1,10 +1,12 @@
 #pragma once
 
-#define TAPPING_TERM 250
+#define TAPPING_TERM 125
 // #define PERMISSIVE_HOLD
-// #define IGNORE_MOD_TAP_INTERRUPT
-#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define PERMISSIVE_HOLD_PER_KEY
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_FORCE_HOLD
 
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define ENABLE_RGB_MATRIX_NONE
 #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT       // Static gradient left to right, speed controls how much gradient changes
 #define ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL           // Single hue spinning spiral fades brightness

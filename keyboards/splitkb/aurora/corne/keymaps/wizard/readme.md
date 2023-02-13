@@ -1,3 +1,4 @@
+@ -1,88 +0,0 @@
 # Aurora Corne's Default Keymap
 _This keymap is a copy of the [Corne default keymap](https://github.com/qmk/qmk_firmware/tree/master/keyboards/crkbd/keymaps/default), with modified OLED code._
 

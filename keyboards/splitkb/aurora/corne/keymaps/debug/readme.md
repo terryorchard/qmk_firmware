@@ -1,4 +1,4 @@
-# Aurora Corne's Debug Keymap
+-# Aurora Corne's Debug Keymap
 
 To make debugging your build as easy as possible, we have provided a special debugging keymap. It is not intended to actually type on, it is just here to make sure that your hardware is working correctly.
 
