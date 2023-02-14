@@ -3,9 +3,8 @@
 
 #pragma once
 
-
-// #define MATRIX_ROWS 4
-// #define MATRIX_COLS 10
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 10
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
@@ -22,8 +21,8 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-// #define TAPPING_TERM 125
-// #define PERMISSIVE_HOLD
+#define TAPPING_TERM 125
+#define PERMISSIVE_HOLD
 // #define PERMISSIVE_HOLD_PER_KEY
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD

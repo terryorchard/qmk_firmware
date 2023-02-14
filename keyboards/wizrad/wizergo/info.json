@@ -1,6 +1,6 @@
 {
     "manufacturer": "Terry Orchard",
-    "keyboard_name": "wizrad/wizergo",
+    "keyboard_name": "wizergo",
     "maintainer": "terryorchard",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
@@ -9,6 +9,8 @@
         "command": false,
         "console": false,
         "extrakey": true,
+        "rgb_matrix": false,
+        "rgblight": false,
         "mousekey": true,
         "nkro": true
     },
@@ -18,6 +20,40 @@
         "device_version": "1.0.0",
         "pid": "0x0000",
         "vid": "0xFEED"
+    },
+    "matrix_pins": {
+        "rows": ["GP6", "GP7", "GP8", "GP9"],
+        "cols": ["GP26", "GP22", "GP20", "GP23", "GP21"]
+    },
+    "encoder": {
+        "enabled": true,
+        "rotary": [
+            {
+                "pin_a": "GP4",
+                "pin_b": "GP5"
+            }
+        ]
+    },
+    "split": {
+        "enabled": true,
+        "soft_serial_pin": "GP1",
+        "main": "pin",
+        "matrix_pins": {
+            "right": {
+                "rows": ["GP22", "GP20", "GP23", "GP21"],
+                "cols": ["GP5", "GP6", "GP7", "GP8", "GP9"]
+            }
+        },
+        "encoder": {
+            "right": {
+                "rotary": [
+                    {
+                        "pin_a": "GP27",
+                        "pin_b": "GP26"
+                    }
+                ]
+            }
+        }
     },
     "layouts": {
         "LAYOUT": {
@@ -55,49 +91,15 @@
                 { "matrix": [2, 8], "x": 10, "y": 2.125 },
                 { "matrix": [2, 9], "x": 11, "y": 2.25 },
 
-                { "matrix": [3, 1], "x": 1.5, "y": 3.25 },
-                { "matrix": [3, 2], "x": 2.5, "y": 3.5 },
-                { "matrix": [3, 3], "x": 3.5, "y": 3.75 },
-                { "matrix": [3, 4], "x": 4.5, "y": 3.75 },
-
+                { "matrix": [3, 1], "x": 1.5, "y": 3.125 },
+                { "matrix": [3, 2], "x": 2.5, "y": 3 },
+                { "matrix": [3, 3], "x": 3.5, "y": 3.125 },
+                { "matrix": [3, 4], "x": 4.5, "y": 3.25 },
                 { "matrix": [3, 5], "x": 7.5, "y": 3.25 },
-                { "matrix": [3, 6], "x": 8.5, "y": 3.5 },
-                { "matrix": [3, 7], "x": 9.5, "y": 3.75 },
-                { "matrix": [3, 8], "x": 10.5, "y": 3.75 }
+                { "matrix": [3, 6], "x": 8.5, "y": 3.125 },
+                { "matrix": [3, 7], "x": 9.5, "y": 3 },
+                { "matrix": [3, 8], "x": 10.5, "y": 3.125 }
             ]
         }
-    },
-    "matrix_pins": {
-        "rows": ["GP6", "GP7", "GP8", "GP9"],
-        "cols": ["GP26", "GP22", "GP20", "GP23", "GP21"]
-    },
-    "encoder": {
-        "enabled": true,
-        "rotary": [
-            {
-                "pin_a": "GP4",
-                "pin_b": "GP5"
-            }
-        ]
-    },
-    "split": {
-        "soft_serial_pin": "GP1",
-        "main": "pin",
-        "matrix_pins": {
-            "right": {
-                "rows": ["GP22", "GP20", "GP23", "GP21"],
-                "cols": ["GP5", "GP6", "GP7", "GP8", "GP9"]
-            }
-        },
-        "encoder": {
-            "right": {
-                "rotary": [
-                    {
-                        "pin_a": "GP27",
-                        "pin_b": "GP26"
-                    }
-                ]
-            }
-        }
-    },
+    }
 }
