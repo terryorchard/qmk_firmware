@@ -5,26 +5,20 @@
 
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 10
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
 
-/* disable debug print */
-//#define NO_DEBUG
+// default but used in macros
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
 
-/* disable print */
-//#define NO_PRINT
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
-
-#define TAPPING_TERM 125
-#define PERMISSIVE_HOLD
-// #define PERMISSIVE_HOLD_PER_KEY
+// Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
+
+// Auto Shift
+#define NO_AUTO_SHIFT_ALPHA
+#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
+#define AUTO_SHIFT_NO_SETUP
 
 #define SPLIT_HAND_PIN GP29
