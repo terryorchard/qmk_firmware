@@ -1,5 +1,6 @@
 #include "quantum.h"
 
+/*
 led_config_t g_led_config = { {
         // Key Matrix to LED Index,
         { 0,      NO_LED, NO_LED, NO_LED },
@@ -16,23 +17,27 @@ led_config_t g_led_config = { {
     }
 };
 
+// get_highest_layer(layer_state|default_layer_state)
 bool rgb_matrix_indicators_user(void) {
-    switch(get_highest_layer(layer_state|default_layer_state)) {
+    if (!rgb_matrix_indicators_user()) {
+        return false;
+    }
+    switch(biton32(layer_state)) {
         case 0:
-            rgb_matrix_set_color_all(RGB_RED);
+            rgb_matrix_set_color(0, RGB_RED);
             break;
         case 1:
-            rgb_matrix_set_color_all(RGB_GREEN);
+            rgb_matrix_set_color(0, RGB_GREEN);
             break;
         case 2:
-            rgb_matrix_set_color_all(RGB_BLUE);
+            rgb_matrix_set_color(0, RGB_BLUE);
             break;
         default:
-            rgb_matrix_set_color_all(RGB_PURPLE);
-            break;
+            rgb_matrix_set_color(0, RGB_WHITE);
     }
     return true;
 }
+*/
 
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
