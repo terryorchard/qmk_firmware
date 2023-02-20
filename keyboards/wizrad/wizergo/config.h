@@ -13,6 +13,10 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
+// Tapping while holding sends hold key even within the tapping term.
+#define PERMISSIVE_HOLD
+// Send tap command if held longer than the tapping term.
+// #define RETRO_TAPPING
 
 // Auto Shift
 #define NO_AUTO_SHIFT_ALPHA
