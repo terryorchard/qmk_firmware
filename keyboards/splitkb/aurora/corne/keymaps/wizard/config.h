@@ -1,10 +1,18 @@
 #pragma once
 
-#define TAPPING_TERM 125
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
 // #define PERMISSIVE_HOLD
-#define PERMISSIVE_HOLD_PER_KEY
+// #define PERMISSIVE_HOLD_PER_KEY
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
+
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
+// Tapping while holding sends hold key even within the tapping term.
+#define PERMISSIVE_HOLD
 
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define ENABLE_RGB_MATRIX_NONE

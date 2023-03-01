@@ -12,7 +12,8 @@ enum layers {
 
 enum custom_keycodes {
     NEXTSEN = SAFE_RANGE,
-    SRCHSEL
+    SRCHSEL,
+    PENIS
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -50,14 +51,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_ADJUST] = LAYOUT(           // 3
     QK_BOOT,			KC_F13,       KC_F14,       KC_F15,			  KC_INS,			  DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  KC_NO,
-    KC_CAPS,			KC_F16,			  KC_F17,			  KC_F18,			  KC_PAUS,			DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_NO,			  KC_NO,
+    KC_CAPS,			KC_F16,			  KC_F17,			  KC_F18,			  KC_PAUS,			DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_LCBR,			KC_RCBR,
     KC_SLEP,			KC_F19,			  KC_F20,			  KC_F21,			  KC_SCRL,			TO(6),			  KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,      KC_TRNS,      KC_TRNS,			KC_TRNS,			KC_TRNS
   ),
   [_EXTRAS] = LAYOUT(           // 4
-    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      KC_NO,			  KC_NO,			  KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
+    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      KC_NO,			  PENIS,			  KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
     KC_LCTL,			KC_LEFT,			KC_DOWN,			KC_RGHT,			SRCHSEL,			KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,
-    KC_LSFT,			NEXTSEN,			RCS(KC_C),		RCS(KC_V),		LCA(KC_L),		LCA(KC_L),		KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,
+    KC_LSFT,			KC_NO,			  RCS(KC_C),		RCS(KC_V),		LCA(KC_L),		LCA(KC_L),		KC_NO,			  KC_NO,			  NEXTSEN,			KC_NO,
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,      KC_TRNS,      KC_TRNS,		  KC_TRNS,			KC_TRNS
   ),
   [_NUMPAD] = LAYOUT(           // 5
@@ -78,6 +79,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 //  const uint8_t oneshot_mods = get_oneshot_mods();
 //  const uint8_t mods = get_mods();
   switch (keycode) {
+
+    case PENIS:  // Type out peeeenis.
+      if (record->event.pressed) {
+        SEND_STRING("/wiz say pe");
+      }
+      else if (record->tap.count && record->event.pressed) {
+            tap_code16(KC_E); // Tap E)
+      }
+      else {
+        
+        SEND_STRING("nis" SS_TAP(X_ENTER));
+      }
+      return false;
 
     case NEXTSEN:  // Next sentence macro.
       if (record->event.pressed) {
