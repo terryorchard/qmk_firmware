@@ -12,8 +12,7 @@ enum layers {
 
 enum custom_keycodes {
     NEXTSEN = SAFE_RANGE,
-    SRCHSEL,
-    PENIS
+    SRCHSEL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -34,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(             // 0
     KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_T,				  KC_Y,				  KC_U,				  KC_I,				  KC_O,				  KC_P,
     KC_A,				  LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F), KC_G,				  KC_H,				  RSFT_T(KC_J), RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_QUOT),
-    LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_V,				  KC_B,				  KC_N,				  KC_M,				  KC_COMM,			KC_DOT,			  LT(1,KC_SLSH),
-                  LCTL_T(KC_TAB),LT(4,KC_DEL),LT(1,KC_BSPC),KC_MNXT,      KC_MPLY,			LT(2,KC_SPC),	LT(4,KC_ENT),	LT(5,KC_ESC)
+    LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_V,				  KC_B,				  KC_N,				  KC_M,				  KC_COMM,			KC_DOT,			  LT(5,KC_SLSH),
+                  LCTL_T(KC_TAB),LT(4,KC_DEL),LT(1,KC_BSPC),KC_MNXT,      KC_MPLY,			LT(2,KC_SPC),	LT(4,KC_ENT),	LT(1,KC_ESC)
   ),
   [_FUNSYM] = LAYOUT(           // 1
     KC_F2,			  KC_F3,        KC_F4,			  KC_F5,        KC_F6,			  KC_F7,			  KC_F8,			  KC_F9,			  KC_F10,			  KC_F11,
@@ -56,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,      KC_TRNS,      KC_TRNS,			KC_TRNS,			KC_TRNS
   ),
   [_EXTRAS] = LAYOUT(           // 4
-    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      KC_NO,			  PENIS,			  KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
+    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      KC_NO,			  KC_NO,			  KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
     KC_LCTL,			KC_LEFT,			KC_DOWN,			KC_RGHT,			SRCHSEL,			KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,
     KC_LSFT,			KC_NO,			  RCS(KC_C),		RCS(KC_V),		LCA(KC_L),		LCA(KC_L),		KC_NO,			  KC_NO,			  NEXTSEN,			KC_NO,
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,      KC_TRNS,      KC_TRNS,		  KC_TRNS,			KC_TRNS
@@ -65,13 +64,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(0),			  KC_NO,			  KC_MS_U,			KC_NO,			  KC_NUM,			  KC_PSLS,			KC_P7,			  KC_P8,			  KC_P9,			  KC_PMNS,
     KC_NO,			  KC_MS_L,			KC_MS_D,			KC_MS_R,			KC_WH_U,			KC_PAST,			KC_P4,			  KC_P5,			  KC_P6,			  KC_PPLS,
     KC_NO,			  KC_WH_L,			KC_BTN3,			KC_WH_R,			KC_WH_D,			KC_P0,			  KC_P1,			  KC_P2,			  KC_P3,			  KC_PENT,
-                  KC_BTN2,			KC_BTN1,			KC_BSPC,			KC_TRNS,      KC_TRNS,      KC_LALT,			KC_PDOT,			KC_PCMM
+                  KC_BTN2,			KC_BTN1,			KC_BSPC,			KC_TRNS,      KC_TRNS,      KC_LALT,			KC_PDOT,			KC_COLN
   ),
   [_GAMING] = LAYOUT(           // 6
-    KC_TAB,			  KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_2,				  KC_3,				  KC_4,				  KC_5,				  KC_6,
-    KC_LCTL,			KC_A,				  KC_S,				  KC_D,				  KC_F,				  KC_H,				  KC_J,				  KC_K,				  KC_L,				  KC_CAPS,
-    KC_LSFT,			KC_Z,				  KC_X,				  KC_C,				  KC_V,				  KC_N,				  KC_M,				  KC_COMM,			KC_DOT,			  TO(0),
-                  KC_ESC,			  KC_1,				  KC_SPC,			  KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS
+    KC_TAB,			  KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_T,				  KC_Y,				  KC_U,				  KC_I,				  KC_O,
+    KC_LCTL,			KC_A,				  KC_S,				  KC_D,				  KC_F,				  KC_G,				  KC_H,				  KC_J,				  KC_K,				  KC_CAPS,
+    KC_LSFT,			KC_Z,				  KC_X,				  KC_C,				  KC_V,				  KC_B,				  KC_N,				  KC_M,         KC_DOT,			  TO(0),
+                  KC_ESC,			  KC_1,				  KC_SPC,			  KC_TRNS,			KC_TRNS,			KC_BSPC,			KC_ENT,			  KC_LALT
   )
 };
 
@@ -79,19 +78,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 //  const uint8_t oneshot_mods = get_oneshot_mods();
 //  const uint8_t mods = get_mods();
   switch (keycode) {
-
-    case PENIS:  // Type out peeeenis.
-      if (record->event.pressed) {
-        SEND_STRING("/wiz say pe");
-      }
-      else if (record->tap.count && record->event.pressed) {
-            tap_code16(KC_E); // Tap E)
-      }
-      else {
-        
-        SEND_STRING("nis" SS_TAP(X_ENTER));
-      }
-      return false;
 
     case NEXTSEN:  // Next sentence macro.
       if (record->event.pressed) {
