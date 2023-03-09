@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "quantum.h"
 
 enum layers {
     _NUMPD,
@@ -30,14 +29,14 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(       // 0 — BASE: numpad
-        TO(1),          KC_P0,          KC_PAST,        KC_PMNS,
+        TO(1),          KC_PSLS,        KC_PAST,        KC_PMNS,
         KC_P7,          KC_P8,          KC_P9,          KC_PPLS,
         KC_P4,          KC_P5,          KC_P6,          KC_WH_U,
         KC_P1,          KC_P2,          KC_P3,          KC_WH_D,
         KC_P0,          KC_PDOT,        LALT_T(KC_PENT),KC_NUM
     ),
     [1] = LAYOUT(       // 1 — MACROS: wzd_bot
-        TO(0),          KC_P1,          SEEM,           OPTO,
+        TO(0),          SURPRISE,       SEEM,           OPTO,
         WEATHER,        WORKING,        HINT,           SHRUG,
         UNDEF,          HOBBY,          TOLD,           KC_WH_U,
         DOIT,           WORK,           FUN,            KC_WH_D,
@@ -45,6 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+/*
 led_config_t g_led_config = { {
         // Key Matrix to LED Index,
         { 0,      NO_LED, NO_LED, NO_LED },
@@ -60,9 +60,8 @@ led_config_t g_led_config = { {
         0
     }
 };
+*/
 
-
-uint16_t layer = 0;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case FUCK:
@@ -74,6 +73,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DOIT:
             if (record->event.pressed) {
                 SEND_STRING("/wiz say you won" SS_TAP(X_QUOT) "t do it");
+                SEND_STRING(SS_TAP(X_ENTER));
             }
             return false;
 
@@ -87,6 +87,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case FUN:
             if (record->event.pressed) {
                 SEND_STRING("/wiz say having fun yet");
+                tap_code16(KC_QUES);
                 SEND_STRING(SS_TAP(X_ENTER));
             }
             return false;
@@ -163,7 +164,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case WEATHER:
             if (record->event.pressed) {
-                SEND_STRING("/wiz weather");
+                SEND_STRING("/wiz weather ");
             }
             return false;
 
