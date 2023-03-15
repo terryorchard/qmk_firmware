@@ -5,9 +5,11 @@
 
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 10
+#define SPLIT_HAND_PIN GP29
 
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
+#define COMBO_COUNT 9
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -15,12 +17,8 @@
 #define TAPPING_FORCE_HOLD
 // Tapping while holding sends hold key even within the tapping term.
 #define PERMISSIVE_HOLD
-// Send tap command if held longer than the tapping term.
-// #define RETRO_TAPPING
 
 // Auto Shift
-#define NO_AUTO_SHIFT_ALPHA
-#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
-#define AUTO_SHIFT_NO_SETUP
-
-#define SPLIT_HAND_PIN GP29
+// #define NO_AUTO_SHIFT_ALPHA
+// #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
+// #define AUTO_SHIFT_NO_SETUP
