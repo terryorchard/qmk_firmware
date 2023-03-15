@@ -1,11 +1,17 @@
 #pragma once
 
+#define COMBO_COUNT 15
 #define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
-// #define PERMISSIVE_HOLD_PER_KEY
-#define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+// #define PERMISSIVE_HOLD_PER_KEY
 
+// ----- RGB ANIMATIONS ----- //
+#define RGBLIGHT_HUE_STEP 20
+#define RGBLIGHT_SAT_STEP 10
+#define RGBLIGHT_VAL_STEP 10
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define ENABLE_RGB_MATRIX_NONE
 #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT       // Static gradient left to right, speed controls how much gradient changes

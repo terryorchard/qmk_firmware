@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,          KC_TRNS,      KC_TRNS,			KC_TRNS,			KC_TRNS
   ),
   [_EXTRAS] = LAYOUT(           // 4
-    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      KC_NO,			      KC_NO,			  KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
+    LCTL(KC_PSCR),KC_NO,			  KC_UP,			  KC_NO,	      QK_BOOT,          QK_BOOT,      KC_NO,        KC_NO,			  KC_NO,			  KC_NO,
     KC_LCTL,			KC_LEFT,			KC_DOWN,			KC_RGHT,			SRCHSEL,			    KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,			  KC_NO,
     KC_LSFT,			KC_NO,			  RCS(KC_C),		RCS(KC_V),		LCA(KC_L),		    LCA(KC_L),		KC_NO,			  KC_NO,			  NEXTSEN,			KC_NO,
                   KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,          KC_TRNS,      KC_TRNS,		  KC_TRNS,			KC_TRNS
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(0),			  KC_NO,			  KC_MS_U,			KC_NO,			  KC_NUM,			      KC_PSLS,			KC_P7,			  KC_P8,			  KC_P9,			  KC_PMNS,
     KC_NO,			  KC_MS_L,			KC_MS_D,			KC_MS_R,			KC_WH_U,			    KC_PAST,			KC_P4,			  KC_P5,			  KC_P6,			  KC_PPLS,
     KC_NO,			  KC_WH_L,			KC_BTN3,			KC_WH_R,			KC_WH_D,			    KC_P0,			  KC_P1,			  KC_P2,			  KC_P3,			  KC_PENT,
-                  KC_BTN2,			KC_BTN1,			KC_BSPC,			TO(_BASE),          TO(0),        KC_LALT,			KC_PDOT,			KC_COLN
+                  KC_BTN2,			KC_BTN1,			KC_BSPC,			TO(_BASE),        TO(0),        KC_LALT,			KC_PDOT,			KC_COLN
   ),
   [_GAMING] = LAYOUT(           // 6
     KC_TAB,			  KC_Q,				  KC_W,				  KC_E,				  KC_R,				      KC_T,				  KC_Y,				  KC_U,				  KC_I,				  KC_O,
@@ -117,21 +117,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 // ----- COMBOS ----- //
 const uint16_t PROGMEM combo_LCBR[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_RCBR[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_LPRN[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
+const uint16_t PROGMEM combo_RPRN[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combo_LBRC[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_RBRC[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combo_SCLN[] = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM combo_MPRV[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_MNXT[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM combo_MINS[] = {KC_Y, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_UNDS[] = {KC_H, KC_N, COMBO_END};
+const uint16_t PROGMEM combo_SCLN[] = {RALT_T(KC_L), RGUI_T(KC_QUOT), COMBO_END};
+const uint16_t PROGMEM combo_COLN[] = {KC_DOT, LT(_NUMPAD,KC_SLSH), COMBO_END};
+const uint16_t PROGMEM combo_UNDO[] = {LT(2,KC_Z), KC_X, COMBO_END};
+const uint16_t PROGMEM combo_COPY[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM combo_PSTE[] = {KC_C, KC_V, COMBO_END};
+
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_LCBR, KC_LCBR),
     COMBO(combo_RCBR, KC_RCBR),
+    COMBO(combo_LPRN, KC_LPRN),
+    COMBO(combo_RPRN, KC_RPRN),
     COMBO(combo_LBRC, KC_LBRC),
     COMBO(combo_RBRC, KC_RBRC),
-    COMBO(combo_SCLN, KC_SCLN),
     COMBO(combo_MPRV, KC_MPRV),
     COMBO(combo_MNXT, KC_MNXT),
     COMBO(combo_MINS, KC_MINS),
-    COMBO(combo_UNDS, KC_UNDS)
+    COMBO(combo_UNDS, KC_UNDS),
+    COMBO(combo_SCLN, KC_SCLN),
+    COMBO(combo_COLN, KC_COLN),
+    COMBO(combo_UNDO, LCTL(KC_Z)),
+    COMBO(combo_COPY, LCTL(KC_C)),
+    COMBO(combo_PSTE, LCTL(KC_V))
 };

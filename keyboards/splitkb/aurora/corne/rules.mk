@@ -15,3 +15,4 @@
 
 DEFAULT_FOLDER = splitkb/aurora/corne/rev1
 CONVERT_TO=elite_pi
+COMBO_ENABLE = yes
