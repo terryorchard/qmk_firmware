@@ -111,6 +111,7 @@ const uint16_t PROGMEM combo_CSCR[] = {KC_E, LCTL_T(KC_D), COMBO_END};          
 const uint16_t PROGMEM combo_PSCR[] = {KC_R, LSFT_T(KC_F), COMBO_END};          // R  F  = print screen
 const uint16_t PROGMEM combo_RTAB[] = {KC_T, KC_G, COMBO_END};                  // T  G  = restore tab
 
+const uint16_t PROGMEM combo_KILL[] = {KC_D, KC_F, COMBO_END};                  // D  F  = enter
 const uint16_t PROGMEM combo_KTAB[] = {KC_A, KC_S, COMBO_END};                  // A  S  = tab
 const uint16_t PROGMEM combo_KILL[] = {KC_V, KC_B, COMBO_END};                  // V  B  = quit app
 	
@@ -139,6 +140,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_PSCR, KC_PSCR),
     COMBO(combo_RTAB, RCS(KC_T)),
 // + 5 = 20
+    COMBO(combo_KENT, KC_ENT),
     COMBO(combo_KTAB, KC_TAB),
     COMBO(combo_KILL, LALT(KC_F4))
 };
