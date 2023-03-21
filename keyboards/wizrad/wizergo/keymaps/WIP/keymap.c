@@ -33,25 +33,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_T,				      KC_Y,				  KC_U,				  KC_I,				  KC_O,				  KC_P,
     KC_A,				  LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F), KC_G,				      KC_H,				  RSFT_T(KC_J), RCTL_T(KC_K),	RALT_T(KC_L),	KC_QUOT,
     LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_V,				  KC_B,				      KC_N,				  KC_M,				  KC_COMM,			KC_DOT,			  LT(_NUMPAD,KC_SLSH),
-                LGUI_T(KC_TAB),LT(1,KC_BSPC),LT(3,KC_DEL),TO(_NUMPAD),      KC_MPLY,			  LT(3,KC_ENT), LT(2,KC_SPC), RGUI_T(KC_ESC)
+                  KC_TAB        ,LT(1,KC_BSPC),LT(3,KC_DEL),TO(_NUMPAD),      KC_MPLY,		RGUI_T(3,KC_ENT),LT(2,KC_SPC),KC_ESC
   ),
   [_LOWER] = LAYOUT(           // 1
     KC_F2,			  KC_F3,        KC_F4,			  KC_F5,        KC_F6,			      KC_F7,			  KC_F8,			  KC_F9,			  KC_F10,			  KC_F11,
     KC_EXLM,		  KC_AT,			  KC_HASH,			KC_DLR,			  KC_PERC,			    KC_CIRC,			KC_AMPR,			KC_ASTR,			KC_LPRN,			KC_RPRN,
     KC_F1,			  KC_F12,       KC_PIPE,			DM_PLY2,      DM_PLY1,	        KC_TILD,			KC_UNDS,			KC_PLUS,			KC_LBRC,			KC_RBRC,
-                  TO(_BASE),    KC_TRNS,			TO(_GAMING),  KC_TRNS,          KC_TRNS,      CW_TOGG,			MO(_ADJUST),  KC_TRNS
+                  TO(_BASE),    KC_TRNS,			QK_BOOT,			KC_TRNS,          KC_TRNS,      CW_TOGG,			MO(_ADJUST),  KC_TRNS
   ),
   [_RAISE] = LAYOUT(           // 2
     KC_1,				  KC_2,				  KC_3,				  KC_4,				  KC_5,				      KC_6,				  KC_7,				  KC_8,				  KC_9,				  KC_0,
     KC_LCTL,			KC_LCBR,			KC_RCBR,			KC_PGUP,			KC_HOME,			    KC_BSLS,			KC_LEFT,			KC_DOWN,			KC_UP,			  KC_RGHT,
     KC_LSFT,			KC_LBRC,			KC_RBRC,			KC_PGDN,			KC_END,			      KC_GRV,			  KC_MINS,			KC_EQL,			  KC_COLN,			KC_SCLN,
-                  KC_TRNS,			MO(_ADJUST),  CW_TOGG,			KC_TRNS,          KC_TRNS,      TO(_GAMING),  KC_TRNS,			TO(_BASE)
+                  KC_TRNS,			MO(_ADJUST),  CW_TOGG,			KC_TRNS,          KC_TRNS,      QK_BOOT,			KC_TRNS,			TO(_BASE)
   ),
   [_ADJUST] = LAYOUT(           // 3
-    QK_BOOT,			LCTL(KC_W),   KC_UP,        KC_ENT,       KC_INS,			      DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  QK_BOOT,
+    QK_BOOT,			TO(_GAMING),  KC_UP,        KC_ENT,       KC_INS,			      DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  QK_BOOT,
     KC_CAPS,			KC_LEFT,      KC_DOWN,      KC_RGHT,      KC_PAUS,			    DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_LCBR,			KC_RCBR,
     KC_SLEP,			KC_F13,			  KC_F14,			  KC_F15,			  LCA(KC_L),		    LCA(KC_L),		KC_NO,			  SRCHSEL,      NEXTSEN,      KC_NO,
-                  TO(_GAMING),  KC_TRNS,			KC_TRNS,			KC_TRNS,          KC_TRNS,      KC_TRNS,			KC_TRNS,			TO(_GAMING)
+                  KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,          KC_TRNS,      KC_TRNS,			KC_TRNS,			KC_TRNS
   ),
   [_NUMPAD] = LAYOUT(           // 4
     TO(_BASE),    KC_NO,			  KC_MS_U,			KC_SCRL,      KC_NUM,			      KC_PSLS,			KC_P7,			  KC_P8,			  KC_P9,			  KC_PMNS,
@@ -111,8 +111,8 @@ const uint16_t PROGMEM combo_CSCR[] = {KC_E, LCTL_T(KC_D), COMBO_END};          
 const uint16_t PROGMEM combo_PSCR[] = {KC_R, LSFT_T(KC_F), COMBO_END};          // R  F  = print screen
 const uint16_t PROGMEM combo_RTAB[] = {KC_T, KC_G, COMBO_END};                  // T  G  = restore tab
 
-const uint16_t PROGMEM combo_KILL[] = {KC_D, KC_F, COMBO_END};                  // D  F  = enter
-const uint16_t PROGMEM combo_KTAB[] = {KC_A, KC_S, COMBO_END};                  // A  S  = tab
+const uint16_t PROGMEM combo_KENT[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};  // D  F  = enter
+const uint16_t PROGMEM combo_KTAB[] = {KC_A, LALT_T(KC_S), COMBO_END};          // A  S  = tab
 const uint16_t PROGMEM combo_KILL[] = {KC_V, KC_B, COMBO_END};                  // V  B  = quit app
 	
 combo_t key_combos[COMBO_COUNT] = {
