@@ -6,6 +6,7 @@ enum layers {
   _RAISE,
   _ADJUST,
   _NUMPAD,
+  _COLMAK,
   _GAMING
 };
 
@@ -33,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_T,				      KC_Y,				  KC_U,				  KC_I,				  KC_O,				  KC_P,
     KC_A,				  LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F), KC_G,				      KC_H,				  RSFT_T(KC_J), RCTL_T(KC_K),	RALT_T(KC_L),	KC_QUOT,
     LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_V,				  KC_B,				      KC_N,				  KC_M,				  KC_COMM,			KC_DOT,			  LT(_NUMPAD,KC_SLSH),
-                  KC_TAB        ,LT(1,KC_BSPC),LT(3,KC_DEL),TO(_NUMPAD),      KC_MPLY,		RGUI_T(3,KC_ENT),LT(2,KC_SPC),KC_ESC
+                  KC_TAB,       LT(1,KC_BSPC),LT(3,KC_DEL), TO(_NUMPAD),      KC_MPLY,      RGUI_T(KC_ENT),LT(2,KC_SPC),KC_ESC
   ),
   [_LOWER] = LAYOUT(           // 1
     KC_F2,			  KC_F3,        KC_F4,			  KC_F5,        KC_F6,			      KC_F7,			  KC_F8,			  KC_F9,			  KC_F10,			  KC_F11,
@@ -48,10 +49,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_TRNS,			MO(_ADJUST),  CW_TOGG,			KC_TRNS,          KC_TRNS,      QK_BOOT,			KC_TRNS,			TO(_BASE)
   ),
   [_ADJUST] = LAYOUT(           // 3
-    QK_BOOT,			TO(_GAMING),  KC_UP,        KC_ENT,       KC_INS,			      DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  QK_BOOT,
+    QK_BOOT,			LCTL(KC_W),   KC_UP,        KC_ENT,       KC_INS,			      DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  QK_BOOT,
     KC_CAPS,			KC_LEFT,      KC_DOWN,      KC_RGHT,      KC_PAUS,			    DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_LCBR,			KC_RCBR,
-    KC_SLEP,			KC_F13,			  KC_F14,			  KC_F15,			  LCA(KC_L),		    LCA(KC_L),		KC_NO,			  SRCHSEL,      NEXTSEN,      KC_NO,
-                  KC_TRNS,			KC_TRNS,			KC_TRNS,			KC_TRNS,          KC_TRNS,      KC_TRNS,			KC_TRNS,			KC_TRNS
+    KC_SLEP,			KC_F13,			  KC_F14,			  KC_F15,			  LCA(KC_L),		    LCA(KC_L),		KC_NO,			  SRCHSEL,      NEXTSEN,      TO(_COLMAK),
+                  KC_TRNS,			KC_TRNS,			TO(_GAMING),  KC_TRNS,          KC_TRNS,      TO(_GAMING),  KC_TRNS,			KC_TRNS
   ),
   [_NUMPAD] = LAYOUT(           // 4
     TO(_BASE),    KC_NO,			  KC_MS_U,			KC_SCRL,      KC_NUM,			      KC_PSLS,			KC_P7,			  KC_P8,			  KC_P9,			  KC_PMNS,
@@ -59,11 +60,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,			  KC_WH_L,			KC_BTN3,			KC_WH_R,			KC_WH_D,			    KC_P0,			  KC_P1,			  KC_P2,			  KC_P3,			  KC_PENT,
                   KC_BTN2,			KC_BSPC,			KC_BTN1,			TO(_BASE),        TO(_BASE),    KC_PDOT,			KC_LALT,			KC_COLN
   ),
-  [_GAMING] = LAYOUT(           // 5
+  [_COLMAK] = LAYOUT(             // 5
+    KC_Q,				  KC_W,				  KC_F,				  KC_P,				  KC_B,				      KC_J,				  KC_L,				  KC_U,				  KC_Y,				  KC_QUOT,
+    KC_A,				  LALT_T(KC_R),	LCTL_T(KC_S),	LSFT_T(KC_T), KC_G,				      KC_M,				  RSFT_T(KC_N), RCTL_T(KC_E),	RALT_T(KC_I),	KC_O,
+    LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_D,				  KC_V,				      KC_K,				  KC_H,				  KC_COMM,			KC_DOT,			  LT(_NUMPAD,KC_SLSH),
+                  KC_TAB,       LT(1,KC_BSPC),LT(3,KC_DEL), TO(_BASE),        KC_MPLY,      RGUI_T(KC_ENT),LT(2,KC_SPC),KC_ESC
+  ),
+  [_GAMING] = LAYOUT(           // 6
     KC_TAB,			  KC_Q,				  KC_W,				  KC_E,				  KC_R,				      KC_T,				  KC_Y,				  KC_U,				  KC_I,				  KC_O,
     KC_LCTL,			KC_A,				  KC_S,				  KC_D,				  KC_F,				      KC_G,				  KC_H,				  KC_J,				  KC_K,				  KC_CAPS,
     KC_LSFT,			KC_Z,				  KC_X,				  KC_C,				  KC_V,				      KC_B,				  KC_N,				  KC_M,         KC_COMM,			KC_DOT,
-                  KC_ESC,			  KC_SPC,			  LT(2,KC_1),   TO(_BASE),        TO(_BASE),    KC_ENT,			  KC_BSPC,			KC_LALT
+                  KC_ESC,			  KC_SPC,			  LT(2,KC_1),   TO(_BASE),        KC_MPLY,      KC_ENT,			  KC_BSPC,			KC_LALT
   )
 };
 
