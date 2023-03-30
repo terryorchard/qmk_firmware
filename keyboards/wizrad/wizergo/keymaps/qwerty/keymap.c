@@ -110,7 +110,7 @@ const uint16_t PROGMEM combo_LESC[] = {KC_Q, KC_W, COMBO_END};                  
 const uint16_t PROGMEM combo_RESC[] = {KC_O, KC_P, COMBO_END};                  // O P = esc
 const uint16_t PROGMEM combo_CSCR[] = {KC_E, LCTL_T(KC_D), COMBO_END};          // E  D  = print region
 const uint16_t PROGMEM combo_PSCR[] = {KC_R, LSFT_T(KC_F), COMBO_END};          // R  F  = print screen
-const uint16_t PROGMEM combo_RTAB[] = {KC_T, KC_G, COMBO_END};                  // T  G  = restore tab
+const uint16_t PROGMEM combo_CTAB[] = {KC_T, KC_G, COMBO_END};                  // T  G  = restore tab
 
 const uint16_t PROGMEM combo_KENT[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};  // D  F  = enter
 const uint16_t PROGMEM combo_KTAB[] = {KC_A, LALT_T(KC_S), COMBO_END};          // A  S  = tab
@@ -131,7 +131,7 @@ combo_t key_combos[COMBO_COUNT] = {
 // + 4 = 10
     COMBO(combo_MPRV, KC_MPRV),
     COMBO(combo_MNXT, KC_MNXT),
-    COMBO(combo_UNDO, LCTL(KC_S)),
+    COMBO(combo_SAVE, LCTL(KC_S)),
     COMBO(combo_UNDO, LCTL(KC_Z)),
     COMBO(combo_COPY, LCTL(KC_C)),
     COMBO(combo_PSTE, LCTL(KC_V)),
@@ -140,7 +140,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_RESC, KC_ESC),
     COMBO(combo_CSCR, LCTL(KC_PSCR)),
     COMBO(combo_PSCR, KC_PSCR),
-    COMBO(combo_RTAB, RCS(KC_T)),
+    COMBO(combo_CTAB, RCS(KC_T)),
 // + 5 = 21
     COMBO(combo_KENT, KC_ENT),
     COMBO(combo_KTAB, KC_TAB),
