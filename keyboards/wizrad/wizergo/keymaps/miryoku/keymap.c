@@ -30,10 +30,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘ └───┘     └───┘ └───┘
       */
   [_BASE] = LAYOUT(             // 0
-    KC_Q,				  KC_W,				  KC_F,				  KC_P,				  KC_B,				      KC_J,				  KC_L,				  KC_U,				  KC_Y,				  KC_QUOT,
+    KC_Q,				  KC_W,				  KC_F,				  KC_P,				  KC_B,				      LT(3,KC_J),   KC_L,				  KC_U,				  KC_Y,				  KC_QUOT,
     KC_A,				  LALT_T(KC_R),	LCTL_T(KC_S),	LSFT_T(KC_T), KC_G,				      KC_M,				  RSFT_T(KC_N), RCTL_T(KC_E),	RALT_T(KC_I),	KC_O,
     LT(2,KC_Z),	  KC_X,				  KC_C,				  KC_D,				  KC_V,				      KC_K,				  KC_H,				  KC_COMM,			KC_DOT,			  LT(_NUMPAD,KC_SLSH),
-                  KC_TAB,       LT(1,KC_BSPC),LT(3,KC_DEL), TO(_BASE),        KC_MPLY,      RGUI_T(KC_ENT),LT(2,KC_SPC),KC_ESC
+                  KC_TAB,       LT(1,KC_BSPC),LT(3,KC_DEL), TO(_NUMPAD),      KC_MPLY,      RGUI_T(KC_ENT),LT(2,KC_SPC),KC_ESC
   ),
   [_LOWER] = LAYOUT(           // 1
     KC_F2,			  KC_F3,        KC_F4,			  KC_F5,        KC_F6,			      KC_F7,			  KC_F8,			  KC_F9,			  KC_F10,			  KC_F11,
@@ -94,13 +94,14 @@ const uint16_t PROGMEM combo_RPRN[] = {RCTL_T(KC_E), RALT_T(KC_I), COMBO_END};  
 const uint16_t PROGMEM combo_LBRC[] = {KC_H, KC_COMM, COMBO_END};               // H < = [
 const uint16_t PROGMEM combo_RBRC[] = {KC_COMM, KC_DOT, COMBO_END};             // < > = ]
 
-const uint16_t PROGMEM combo_MINS[] = {KC_J, KC_M, COMBO_END};                  // J M = -
+const uint16_t PROGMEM combo_MINS[] = {LT(3,KC_J), KC_M, COMBO_END};            // J M = -
 const uint16_t PROGMEM combo_UNDS[] = {KC_M, KC_K, COMBO_END};                  // M K = _
 const uint16_t PROGMEM combo_SCLN[] = {RALT_T(KC_I), KC_O, COMBO_END};          // I O = ;
 const uint16_t PROGMEM combo_COLN[] = {KC_DOT, LT(_NUMPAD,KC_SLSH), COMBO_END}; // > ? = :
 
 const uint16_t PROGMEM combo_MPRV[] = {KC_W, KC_F, COMBO_END};                  // W F = «
 const uint16_t PROGMEM combo_MNXT[] = {KC_F, KC_P, COMBO_END};                  // F P = »
+const uint16_t PROGMEM combo_UNDO[] = {LALT_T(KC_R), LCTL_T(KC_S), COMBO_END};  // R S = save
 const uint16_t PROGMEM combo_UNDO[] = {LT(2,KC_Z), KC_X, COMBO_END};            // Z X = undo
 const uint16_t PROGMEM combo_COPY[] = {KC_X, KC_C, COMBO_END};                  // X C = copy
 const uint16_t PROGMEM combo_PSTE[] = {KC_C, KC_D, COMBO_END};                  // C D = paste
@@ -130,17 +131,19 @@ combo_t key_combos[COMBO_COUNT] = {
 // + 4 = 10
     COMBO(combo_MPRV, KC_MPRV),
     COMBO(combo_MNXT, KC_MNXT),
+    COMBO(combo_UNDO, LCTL(KC_S)),
     COMBO(combo_UNDO, LCTL(KC_Z)),
     COMBO(combo_COPY, LCTL(KC_C)),
     COMBO(combo_PSTE, LCTL(KC_V)),
-// + 5 = 15
+// + 6 = 16
     COMBO(combo_LESC, KC_ESC),
     COMBO(combo_RESC, KC_ESC),
     COMBO(combo_CSCR, LCTL(KC_PSCR)),
     COMBO(combo_PSCR, KC_PSCR),
     COMBO(combo_RTAB, RCS(KC_T)),
-// + 5 = 20
+// + 5 = 21
     COMBO(combo_KENT, KC_ENT),
     COMBO(combo_KTAB, KC_TAB),
     COMBO(combo_KILL, LALT(KC_F4))
+// + 3 = 24
 };
