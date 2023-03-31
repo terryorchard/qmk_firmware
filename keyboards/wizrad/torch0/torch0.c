@@ -23,16 +23,19 @@ enum layers {
   _RAISE,
   _ADJUST,
   _NUMPAD,
-  _MIRYOKU,
-  _SYMBOL
 };
 
-#ifdef ENCODER_ENABLE
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
         return false;
     }
-    if(IS_LAYER_ON(_LOWER) || IS_LAYER_ON(_RAISE) || IS_LAYER_ON(_SYMBOL)) {
+    if(IS_LAYER_ON(_LOWER)) {
+        if (clockwise) {
+            tap_code16(C(KC_TAB));
+        } else {
+            tap_code16(S(C(KC_TAB)));
+        }
+    } else if (IS_LAYER_ON(_RAISE)) {
         if (clockwise){
             tap_code(KC_VOLU);
         } else{
@@ -40,11 +43,10 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
         }        
     } else {
         if (clockwise){
-        tap_code(KC_WH_D);
+            tap_code(KC_WH_D);
         } else{
-        tap_code(KC_WH_U);
+            tap_code(KC_WH_U);
         }
     }
     return true;
 }
-#endif

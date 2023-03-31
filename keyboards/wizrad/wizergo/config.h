@@ -6,6 +6,7 @@
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 10
 #define SPLIT_HAND_PIN GP29
+// #define SPLIT_HAND_PIN F4
 
 #undef TAPPING_TERM
 #define TAPPING_TERM 200

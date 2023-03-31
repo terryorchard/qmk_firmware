@@ -2,8 +2,10 @@
     "manufacturer": "Terry Orchard",
     "keyboard_name": "wizrad/torchnum",
     "maintainer": "terryorchard",
+
     "mcu": "atmega32u4",
     "bootloader": "caterina",
+    
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,

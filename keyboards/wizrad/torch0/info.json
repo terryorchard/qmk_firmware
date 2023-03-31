@@ -2,7 +2,11 @@
     "manufacturer": "Terry Orchard",
     "keyboard_name": "wizrad/torch0",
     "maintainer": "terryorchard",
-    "bootloader": "rp2040",
+    
+//    "bootloader": "rp2040",
+    "mcu": "atmega32u4",
+    "bootloader": "caterina",
+
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
@@ -13,8 +17,10 @@
         "nkro": true
     },
     "matrix_pins": {
-        "cols": ["GP29", "GP28", "GP23", "GP21", "GP9", "GP8", "GP7", "GP6", "GP5", "GP4", "GP3", "GP2"],
-        "rows": ["GP27", "GP26", "GP22", "GP20"]
+//        "cols": ["GP29", "GP28", "GP23", "GP21", "GP9", "GP8", "GP7", "GP6", "GP5", "GP4", "GP3", "GP2"],
+//        "rows": ["GP27", "GP26", "GP22", "GP20"]
+        "cols": ["F4", "F5", "B2", "B6", "B5", "B4", "E6", "D7", "C6", "D4", "D0", "D1"],
+        "rows": ["F6", "F7", "B1", "B3"]
     },
     "processor": "RP2040",
     "url": "",
@@ -77,8 +83,10 @@
         "enabled": true,
         "rotary": [
             {
-                "pin_a": "GP0",
-                "pin_b": "GP1"
+//                "pin_a": "GP0",
+//                "pin_b": "GP1"
+                "pin_a": "D3",
+                "pin_b": "D2"
             }
         ]
     }
