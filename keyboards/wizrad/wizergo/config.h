@@ -10,7 +10,7 @@
 
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
-#define COMBO_COUNT 23
+#define COMBO_COUNT 24
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
