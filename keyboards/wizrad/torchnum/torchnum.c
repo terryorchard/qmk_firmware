@@ -36,7 +36,7 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
         return false;
     }
-    if (biton32(layer_state) == 0) {
+    if (biton32(layer_state) == 1) {
         if (clockwise){
             tap_code16(C(KC_TAB));
         } else{

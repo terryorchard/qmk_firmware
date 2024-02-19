@@ -3,8 +3,9 @@
     "keyboard_name": "wizrad/torchnum",
     "maintainer": "terryorchard",
 
-    "mcu": "atmega32u4",
-    "bootloader": "caterina",
+    "bootloader": "rp2040",
+//    "mcu": "atmega32u4",
+//    "bootloader": "caterina",
     
     "diode_direction": "COL2ROW",
     "features": {
@@ -16,12 +17,13 @@
         "nkro": true
     },
     "matrix_pins": {
-/*
+
         "cols": ["GP9", "GP8", "GP7", "GP6"],
         "rows": ["GP21", "GP23", "GP20", "GP22", "GP26"]
-*/
+/*
         "cols": ["B5", "B4", "E6", "D7"],
         "rows": ["B6", "B2", "B3", "B1", "F7"]
+*/
 
     },
     "processor": "RP2040",
@@ -61,12 +63,13 @@
         "enabled": true,
         "rotary": [
             {
-/*
+
                 "pin_a": "GP0",
                 "pin_b": "GP1"
-*/
+/*
                 "pin_a": "D3",
                 "pin_b": "D2"
+*/
 
             }
         ]

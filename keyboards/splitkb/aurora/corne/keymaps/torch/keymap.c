@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-/*
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(             // 0
     KC_TAB,       KC_Q,				  KC_W,				  KC_E,				  KC_R,				  KC_T,				          KC_Y,				  KC_U,				  KC_I,				  KC_O,				  KC_P,               KC_MINS,
@@ -25,14 +25,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_SLEP,			KC_F21,			  KC_F22,			  KC_F23,			  KC_F24,       KC_SCRL,			        RGB_TOG,      RGB_RMOD,     RGB_SPD,      RGB_HUD,      RGB_SAD,      RGB_VAD,
                                               KC_NO,        KC_TRNS,      KC_TRNS,              KC_TRNS,      KC_TRNS,      KC_NO
   ),
-  [4] = LAYOUT(           // 5
+  [4] = LAYOUT(           // 4
     TO(0),			  KC_TAB,			  KC_BTN2,			KC_MS_U,      KC_BTN1,      KC_NUM,			          KC_PSLS,			KC_P7,			  KC_P8,			  KC_P9,			  KC_PMNS,      KC_BSPC,
     KC_NO,			  KC_RCTL,			KC_MS_L,			KC_MS_D,			KC_MS_R,			KC_WH_U,			        KC_PAST,      KC_P4,			  KC_P5,			  KC_P6,			  KC_PPLS,      TO(0),
     KC_NO,			  KC_RSFT,			KC_WH_L,			KC_BTN3,			KC_WH_R,      KC_WH_D,			        KC_P0,        KC_P1,			  KC_P2,			  KC_P3,			  KC_PENT,      KC_PEQL,
                                               KC_NO,       RALT_T(KC_DEL),KC_BTN1,              KC_RALT,      KC_PDOT,      KC_NO
   )
 };
-*/
+
  
 /*
 // ----- MACROS ----- //
@@ -58,23 +58,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 }
 */
 
+#ifdef OLED_ENABLE
 // ----- COMBOS ----- //
-const uint16_t PROGMEM combo_LCBR[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_RCBR[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_LPRN[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
-const uint16_t PROGMEM combo_RPRN[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
-const uint16_t PROGMEM combo_LBRC[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM combo_RBRC[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combo_MPRV[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_MNXT[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM combo_MINS[] = {KC_Y, KC_H, COMBO_END};
-const uint16_t PROGMEM combo_UNDS[] = {KC_H, KC_N, COMBO_END};
-const uint16_t PROGMEM combo_SCLN[] = {RALT_T(KC_L), RGUI_T(KC_QUOT), COMBO_END};
-const uint16_t PROGMEM combo_COLN[] = {KC_DOT, LT(_NUMPAD,KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combo_UNDO[] = {LT(2,KC_Z), KC_X, COMBO_END};
-const uint16_t PROGMEM combo_COPY[] = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo_PSTE[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_LCBR[] = {KC_U, KC_I, COMBO_END};                  // U I = {
+const uint16_t PROGMEM combo_RCBR[] = {KC_I, KC_O, COMBO_END};                  // I O = }
+const uint16_t PROGMEM combo_LPRN[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};  // J K = (
+const uint16_t PROGMEM combo_RPRN[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};  // K L = )
+const uint16_t PROGMEM combo_LBRC[] = {KC_M, KC_COMM, COMBO_END};               // M < = [
+const uint16_t PROGMEM combo_RBRC[] = {KC_COMM, KC_DOT, COMBO_END};             // < > = ]
 
+const uint16_t PROGMEM combo_MINS[] = {LT(3,KC_Y), KC_H, COMBO_END};            // Y H = -
+const uint16_t PROGMEM combo_UNDS[] = {KC_H, KC_N, COMBO_END};                  // H N = _
+const uint16_t PROGMEM combo_SCLN[] = {RALT_T(KC_L), KC_QUOT, COMBO_END};       // L  "  = ;
+const uint16_t PROGMEM combo_COLN[] = {KC_DOT, LT(_NUMPAD,KC_SLSH), COMBO_END}; // >  ?  = :
+
+const uint16_t PROGMEM combo_MPRV[] = {KC_W, KC_E, COMBO_END};                  // W E = «
+const uint16_t PROGMEM combo_MNXT[] = {KC_E, KC_R, COMBO_END};                  // E R = »
+const uint16_t PROGMEM combo_SAVE[] = {LALT_T(KC_S), LCTL_T(KC_D), COMBO_END};  // S D = save
+const uint16_t PROGMEM combo_UNDO[] = {LT(2,KC_Z), KC_X, COMBO_END};            // Z X = undo
+const uint16_t PROGMEM combo_COPY[] = {KC_X, KC_C, COMBO_END};                  // X C = copy
+const uint16_t PROGMEM combo_PSTE[] = {KC_C, KC_V, COMBO_END};                  // C V = paste
+
+const uint16_t PROGMEM combo_LESC[] = {KC_Q, KC_W, COMBO_END};                  // Q W = esc
+const uint16_t PROGMEM combo_RESC[] = {KC_O, KC_P, COMBO_END};                  // O P = esc
+const uint16_t PROGMEM combo_CSCR[] = {KC_E, LCTL_T(KC_D), COMBO_END};          // E  D  = print region
+const uint16_t PROGMEM combo_PSCR[] = {KC_R, LSFT_T(KC_F), COMBO_END};          // R  F  = print screen
+const uint16_t PROGMEM combo_CTAB[] = {KC_T, KC_G, COMBO_END};                  // T  G  = restore tab
+
+const uint16_t PROGMEM combo_KENT[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};  // D  F  = enter
+const uint16_t PROGMEM combo_KTAB[] = {KC_A, LALT_T(KC_S), COMBO_END};          // A  S  = tab
+const uint16_t PROGMEM combo_KILL[] = {KC_V, KC_B, COMBO_END};                  // V  B  = quit app
+	
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_LCBR, KC_LCBR),
     COMBO(combo_RCBR, KC_RCBR),
@@ -82,13 +96,28 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_RPRN, KC_RPRN),
     COMBO(combo_LBRC, KC_LBRC),
     COMBO(combo_RBRC, KC_RBRC),
-    COMBO(combo_MPRV, KC_MPRV),
-    COMBO(combo_MNXT, KC_MNXT),
+// + 6 =  6
     COMBO(combo_MINS, KC_MINS),
     COMBO(combo_UNDS, KC_UNDS),
     COMBO(combo_SCLN, KC_SCLN),
     COMBO(combo_COLN, KC_COLN),
+// + 4 = 10
+    COMBO(combo_MPRV, KC_MPRV),
+    COMBO(combo_MNXT, KC_MNXT),
+    COMBO(combo_SAVE, LCTL(KC_S)),
     COMBO(combo_UNDO, LCTL(KC_Z)),
     COMBO(combo_COPY, LCTL(KC_C)),
-    COMBO(combo_PSTE, LCTL(KC_V))
+    COMBO(combo_PSTE, LCTL(KC_V)),
+// + 6 = 16
+    COMBO(combo_LESC, KC_ESC),
+    COMBO(combo_RESC, KC_ESC),
+    COMBO(combo_CSCR, LCTL(KC_PSCR)),
+    COMBO(combo_PSCR, KC_PSCR),
+    COMBO(combo_CTAB, RCS(KC_T)),
+// + 5 = 21
+    COMBO(combo_KENT, KC_ENT),
+    COMBO(combo_KTAB, KC_TAB),
+    COMBO(combo_KILL, LALT(KC_F4))
+// + 3 = 24
 };
+#endif

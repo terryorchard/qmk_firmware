@@ -11,17 +11,18 @@ enum layers {
 
 enum custom_keycodes {
     NEXTSEN = SAFE_RANGE,
-    SRCHSEL
+    SRCHSEL,
+    OPTO
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┐                     ┌───┬───┬───┬───┬───┐
-      * │ Q │ W │ E │ R │ T │                     │ Y │ U │ I │ O │ P │
+      * │ Q │ W │ F │ P │ B │                     │ J │ L │ U │ Y │ ' │
       * ├───┼───┼───┼───┼───┤                     ├───┼───┼───┼───┼───┤
-      * │ A │ S │ D │ F │ G │                     │ H │ J │ K │ L │ ' │
+      * │ A │ R │ S │ T │ G │                     │ M │ N │ E │ I │ O │
       * ├───┼───┼───┼───┼───┤                     ├───┼───┼───┼───┼───┤
-      * │ Z │ X │ C │ V │ B │                     │ N │ M │ , │ . │ / │
+      * │ Z │ X │ C │ D │ V │                     │ K │ H │ , │ . │ / │
       * └───┴───┴───┴───┴───┘                     └───┴───┴───┴───┴───┘
       *           ┌───┐                                 ┌───┐
       *           │Tab├───┐                         ┌───┤Esc│
@@ -49,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_ADJUST] = LAYOUT(           // 3
     QK_BOOT,			LCTL(KC_W),   KC_UP,        KC_ENT,       KC_INS,			      DM_REC1,	    DM_REC2,      DM_RSTP,	    KC_NO,			  QK_BOOT,
-    KC_CAPS,			KC_LEFT,      KC_DOWN,      KC_RGHT,      KC_PAUS,			    DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_LCBR,			KC_RCBR,
-    KC_SLEP,			KC_F13,			  KC_F14,			  KC_F15,			  LCA(KC_L),		    LCA(KC_L),		KC_NO,			  SRCHSEL,      NEXTSEN,      KC_TRNS,
+    KC_CAPS,			KC_LEFT,      KC_DOWN,      KC_RGHT,      KC_PAUS,			    DT_DOWN,	    DT_UP,		    DT_PRNT,	    KC_NO,        KC_NO,
+    KC_SLEP,			KC_F13,			  LCTL(KC_ENT), LCTL(KC_D),   LCA(KC_L),		    LCA(KC_L),		KC_NO,			  SRCHSEL,      NEXTSEN,      OPTO,
                   KC_TRNS,			KC_TRNS,			TO(_GAMING),  KC_TRNS,          KC_TRNS,      TO(_GAMING),  KC_TRNS,			KC_TRNS
   ),
   [_NUMPAD] = LAYOUT(           // 4
@@ -82,6 +83,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING(SS_LCTL("ct") SS_DELAY(100) SS_LCTL("v") SS_TAP(X_ENTER));
       }
       return false;
+
+    case OPTO:
+      if (record->event.pressed) {
+          SEND_STRING("opto");
+          SEND_STRING(SS_TAP(X_TAB));
+          SEND_STRING("opto22");
+          SEND_STRING(SS_TAP(X_ENTER));
+      }
+      return false;
+
   }
   return true;
 }

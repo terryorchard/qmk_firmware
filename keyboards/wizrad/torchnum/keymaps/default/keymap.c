@@ -7,8 +7,9 @@ enum layers {
 
 enum custom_keycodes {
     LAYER_SWITCH = SAFE_RANGE,
+    UNLOCK,
+    SCORE,
     OPTO,
-    FUCK,
     DOIT,
     WORK,
     FUN,
@@ -40,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         WEATHER,        WORKING,        HINT,           SHRUG,
         UNDEF,          HOBBY,          TOLD,           KC_WH_U,
         DOIT,           WORK,           FUN,            KC_WH_D,
-        FUCK,           RESP,           KC_PENT,        QK_BOOT
+        SCORE,          RESP,           UNLOCK,         QK_BOOT
     )
 };
 
@@ -64,9 +65,17 @@ led_config_t g_led_config = { {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case FUCK:
+        case UNLOCK:
             if (record->event.pressed) {
-                SEND_STRING("/wiz fuck ");
+                SEND_STRING(SS_TAP(X_ENTER) SS_DELAY(2500));
+                SEND_STRING("146750");
+            }
+            return false;
+
+        case SCORE:
+            if (record->event.pressed) {
+                SEND_STRING("/wiz fun high score");
+                SEND_STRING(SS_TAP(X_ENTER));
             }
             return false;
 
@@ -108,7 +117,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case TOLD:
             if (record->event.pressed) {
-                SEND_STRING("/wiz told dad");
+                SEND_STRING("/wiz told dude");
                 SEND_STRING(SS_TAP(X_ENTER));
             }
             return false;

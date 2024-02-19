@@ -1,6 +1,6 @@
 #pragma once
 
-#define COMBO_COUNT 15
+#define COMBO_COUNT 24
 #define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
 #define TAPPING_FORCE_HOLD
